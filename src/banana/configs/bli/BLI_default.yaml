@@ -21,7 +21,26 @@ processing:
   # step_correction: false
 
 kinetic_model:
-  type: piecewise   # or 1_to_1_binding
+  # time-domain trace fit:
+  #   piecewise        - rise+decay exponentials (default)
+  #   1_to_1_binding   - global 1:1 (shared k_on/k_off)
+  #   avidity          - bivalent/heterobivalent ODE (Vauquelin 2013)
+  type: piecewise
+  # avidity-only options (used when type: avidity):
+  # scheme: heterobivalent   # monovalent | homobivalent | heterobivalent
+  # symmetric: true          # share k2=k1, k_off2=k_off1 (homobivalent ligand)
+  # L: 1.0e-3                # local concentration (M) for ring closure
+  # rebind_k: 0.0            # hindered-diffusion rebinding parameter (0=off)
+
+# Optional steady-state (signal-vs-concentration) fit (Jarmoskaite / Tso).
+# When enabled, R_eq is extracted per trace and fit vs concentration.
+equilibrium_model:
+  enabled: false
+  # type: hyperbolic        # hyperbolic | quadratic | two_site_microscopic
+  #                         | two_site_macroscopic | hill
+  # plateau_frac: 0.2       # fraction of association window averaged for R_eq
+  # R_tot: 1.0e-9           # (quadratic) total limiting-species conc (M)
+  # B_tot: 1.0e-12          # (two-site) receptor/surface total conc (M)
 
 output:
   processing_settings_file: processing_settings.yaml

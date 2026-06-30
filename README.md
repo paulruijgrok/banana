@@ -76,6 +76,67 @@ write_processing_settings("output/processing_settings.yaml", **{k: bundle[k] for
 - **`configs/bli/BLI_default.yaml`** – defaults
 - **`configs/bli/octet_384_16sensor_titration_concentration_matched.yaml`** – 16-sensor block + concentration-matched references
 
+## Fitting models
+
+Banana fits both **time-domain** kinetic traces and **steady-state** binding curves.
+
+### Time-domain (response vs. time)
+
+- **`piecewise`** – association (rise) + dissociation (decay) exponentials. Default.
+- **`1_to_1_binding`** – global 1:1 with shared `k_on`/`k_off` and per-trace `R_max`.
+- **`avidity`** – bivalent / heterobivalent ODE model (Vauquelin, *Br J Pharmacol*
+  2013, Appendix S1). Monovalent, homobivalent, and the 5-species heterobivalent
+  avidity scheme (ring closure via local concentration `L` and penalty factor `f`),
+  integrated with `scipy.integrate.solve_ivp` (stiff LSODA), with a NumPy RK4
+  fallback. Captures avidity (raised functional affinity) and prolonged residence
+  time. Configure under `kinetic_model:` (`scheme`, `symmetric`, `L`, `rebind_k`).
+
+```python
+from banana.fitting import fit_titration_global
+g, traces = fit_titration_global(titration, model_type="avidity",
+                                 p0={"scheme": "heterobivalent", "symmetric": True})
+```
+
+### Steady-state (signal vs. concentration)
+
+Per-trace equilibrium response `R_eq` is extracted from the association plateau and
+fit against concentration:
+
+- **`hyperbolic`** – 1:1 Langmuir (Jarmoskaite & Herschlag, *eLife* 2020, Eq. 4b).
+- **`quadratic`** – depletion-aware 1:1 (Jarmoskaite 2020, Eq. 5); use when the
+  limiting species is not ≪ K_D.
+- **`two_site_microscopic`** – 1:2 with two micro K_D's (Tso et al., *Anal Biochem*
+  2018).
+- **`two_site_macroscopic`** – 1:2 symmetric, reports K_D,M and cooperativity α.
+- **`hill`** – Hill equation.
+
+```python
+from banana.fitting import fit_titration_equilibrium
+res = fit_titration_equilibrium(titration, model="hyperbolic")
+print(res.to_dict())          # R_max, K_D, stderrs, chi2
+```
+
+Also: `equilibration_time(k_on, k_off, conc_M)` returns the time to reach
+equilibrium (Jarmoskaite Eqs. 1–2), a QC check for insufficient incubation.
+
+### Autotuning (data-driven initial guesses)
+
+Fits no longer rely on hardcoded starting parameters. `fitting/autotune.py` derives
+initial guesses and physical bounds directly from each trace — `R_max` from the
+plateau, `k_off` from the dissociation-tail log-slope, `k_obs` from association
+curvature, `K_D` from the titration midpoint. This is wired into the piecewise,
+1:1, and equilibrium fits automatically; explicit `p0` values still override.
+
+## Tests
+
+```bash
+pip install -e ".[dev]"
+pytest tests/ -v
+```
+
+`tests/test_new_models.py` covers the model math (mass balances, limiting cases,
+analytic kinetics, cubic solver) and the scipy-backed fits.
+
 ## License
 
 MIT

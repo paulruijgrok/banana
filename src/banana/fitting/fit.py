@@ -9,6 +9,11 @@ from scipy.optimize import curve_fit, least_squares
 
 from banana.models.kinetics import KineticModel, OneToOneBinding, PiecewiseExponential
 from banana.io.titration import TitrationSeries, association_dissociation_start_times
+from banana.fitting.autotune import (
+    InitialGuess,
+    piecewise_initial_guess,
+    one_to_one_initial_guess,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -242,13 +247,20 @@ def fit_titration_global(
                 t1, t2 = association_dissociation_start_times(t, am, dm)
 
             model = PiecewiseExponential(A0=A0, t1=t1, t2=t2)
-            init = [
-                p0.get("A1", 0.05),
-                p0.get("tau1", 10),
-                p0.get("A2", 0.04),
-                p0.get("tau2", 10),
-            ]
-            res = fit_single_trace(t, r, model, p0=init)
+            # Data-driven initial guess + physical bounds (autotuning), with
+            # optional per-parameter overrides from p0.
+            guess = piecewise_initial_guess(t, r, A0=A0, t1=t1, t2=t2)
+            init = list(guess.p0)
+            for j, name in enumerate(["A1", "tau1", "A2", "tau2"]):
+                if name in p0:
+                    init[j] = p0[name]
+            init_guess = InitialGuess(
+                p0=init, lower=guess.lower, upper=guess.upper,
+                param_names=guess.param_names,
+            ).clipped()
+            res = fit_single_trace(
+                t, r, model, p0=init_guess.p0, bounds=init_guess.as_bounds()
+            )
             trace_results.append(res)
 
             if res.success and len(res.params) >= 4:
@@ -329,13 +341,26 @@ def fit_titration_global(
             return np.array(res)
 
         n_traces = len(titration)
-        k_on_0 = p0.get("k_on", 1e4)
-        k_off_0 = p0.get("k_off", 1e-3)
-        R_max_0 = [float(np.max(titration.response[j])) for j in range(n_traces)]
-        x0 = [k_on_0, k_off_0] + R_max_0
+        times = [titration.get_trace(j)[0] for j in range(n_traces)]
+        resps = [titration.get_trace(j)[1] for j in range(n_traces)]
+        guess = one_to_one_initial_guess(
+            times, resps, list(titration.concentration),
+            t1_list=titration.association_start_t,
+            t2_list=titration.dissociation_start_t,
+        )
+        x0 = list(guess.p0)
+        # Honor explicit overrides for the shared rate constants.
+        if "k_on" in p0:
+            x0[0] = p0["k_on"]
+        if "k_off" in p0:
+            x0[1] = p0["k_off"]
+        guess = InitialGuess(
+            p0=x0, lower=guess.lower, upper=guess.upper,
+            param_names=guess.param_names,
+        ).clipped()
 
         try:
-            ls = least_squares(residuals, x0, bounds=(0, np.inf))
+            ls = least_squares(residuals, guess.p0, bounds=tuple(guess.as_bounds()))
             popt = ls.x
             k_on, k_off = popt[0], popt[1]
             K_d = k_off / k_on if k_on > 0 else np.nan
@@ -361,6 +386,62 @@ def fit_titration_global(
                 message=str(e),
                 extra={"trace_results": trace_results},
             ), trace_results
+
+    elif model_type == "avidity":
+        # Per-trace bivalent/avidity ODE fit (Vauquelin 2013). Scheme and fixed
+        # quantities (local conc L, penalty mode) come from p0/options.
+        from banana.models.avidity import AvidityModel
+
+        scheme = str(p0.get("scheme", "heterobivalent"))
+        symmetric = bool(p0.get("symmetric", scheme == "heterobivalent"))
+        L = float(p0.get("L", 1e-3))
+        rebind_k = float(p0.get("rebind_k", 0.0))
+
+        for i in range(len(titration)):
+            t, r = titration.get_trace(i)
+            conc = titration.concentration[i]
+            if len(t) < 10:
+                trace_results.append(FitResult(
+                    False, np.array([]), [], None, None, None, "Too few points"))
+                continue
+            t1 = float(titration.association_start_t[i]) \
+                if titration.association_start_t else float(t[0])
+            t2 = float(titration.dissociation_start_t[i]) \
+                if titration.dissociation_start_t else float(t[-1])
+            model = AvidityModel(
+                scheme=scheme, t1=t1, t2=t2, conc_M=conc * 1e-9,
+                L=L, rebind_k=rebind_k, symmetric=symmetric,
+            )
+            R_max0 = float(np.max(r)) if len(r) else 1.0
+            init_map = {
+                "R_max": R_max0, "k1": p0.get("k1", 1e5),
+                "k_off1": p0.get("k_off1", 1e-2), "k2": p0.get("k2", 1e5),
+                "k_off2": p0.get("k_off2", 1e-2), "f": p0.get("f", 1.0),
+            }
+            init = [init_map[n] for n in model.param_names()]
+            lower = [0.0] + [1e-3 if "k1" in n or "k2" in n else 1e-6
+                             for n in model.param_names()[1:]]
+            upper = [5 * R_max0] + [1e9 if n in ("k1", "k2") else
+                                    (1e3 if n == "f" else 1e2)
+                                    for n in model.param_names()[1:]]
+            res = fit_single_trace(t, r, model, p0=init, bounds=(lower, upper))
+            if res.success:
+                res.extra = dict(res.extra or {})
+                res.extra.update({"scheme": scheme, "conc_nM": conc})
+                res.extra.update(model.avidity_metrics(*res.params))
+            trace_results.append(res)
+
+        ok = [r for r in trace_results if r.success]
+        return FitResult(
+            success=bool(ok),
+            params=np.array([]),
+            param_names=[],
+            cov=None,
+            residuals=None,
+            chi2=float(np.nansum([r.chi2 for r in ok if r.chi2 is not None])) if ok else None,
+            message=f"Avidity ({scheme}) fit: {len(ok)}/{len(trace_results)} traces",
+            extra={"trace_results": trace_results, "scheme": scheme},
+        ), trace_results
 
     else:
         return FitResult(
