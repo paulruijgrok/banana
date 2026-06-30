@@ -1,0 +1,78 @@
+2026/03/11 09:22:25	Experiment started
+2026/03/11 09:22:25	Starting new step
+2026/03/11 09:22:25	Plate 1 temperature = 25 C
+2026/03/11 09:22:25	Plate 2 temperature = 25 C
+2026/03/11 09:22:25	Waiting to pick up sensor location A3
+2026/03/11 09:22:25	Picking sensors location A3
+2026/03/11 09:22:32	Checking sensors location A3
+2026/03/11 09:22:34	Sensor 1: Integration Time = 1.8 ms
+2026/03/11 09:22:34	Sensor 2: Integration Time = 2.7 ms
+2026/03/11 09:22:34	Sensor 3: Integration Time = 1.8 ms
+2026/03/11 09:22:34	Sensor 4: Integration Time = 1.9 ms
+2026/03/11 09:22:34	Sensor 5: Integration Time = 1.9 ms
+2026/03/11 09:22:34	Sensor 6: Integration Time = 2.3 ms
+2026/03/11 09:22:34	Sensor 7: Integration Time = 2.4 ms
+2026/03/11 09:22:34	Sensor 8: Integration Time = 1.8 ms
+2026/03/11 09:22:34	Sensor 9: Integration Time = 1.7 ms
+2026/03/11 09:22:34	Sensor 10: Integration Time = 2.2 ms
+2026/03/11 09:22:34	Sensor 11: Integration Time = 1.9 ms
+2026/03/11 09:22:34	Sensor 12: Integration Time = 1.6 ms
+2026/03/11 09:22:34	Sensor 13: Integration Time = 2.3 ms
+2026/03/11 09:22:34	Sensor 14: Integration Time = 2.0 ms
+2026/03/11 09:22:34	Sensor 15: Integration Time = 2.3 ms
+2026/03/11 09:22:34	Sensor 16: Integration Time = 3.5 ms
+2026/03/11 09:22:37	Picking sensors completed location A3
+2026/03/11 09:22:37	Ready to move to sample location A3
+2026/03/11 09:22:37	Plate 1 temperature = 25 C
+2026/03/11 09:22:37	Plate 2 temperature = 25 C
+2026/03/11 09:22:38	Moving to sample location A3
+2026/03/11 09:22:45	Arrived at sample location A3
+2026/03/11 09:22:45	Waiting to start sample location A3
+2026/03/11 09:22:45	Processing sample location A3
+2026/03/11 09:23:45	Sample completed location A3
+2026/03/11 09:23:45	Waiting to start new step
+2026/03/11 09:23:46	Starting new step
+2026/03/11 09:23:46	Ready to move to sample location A7
+2026/03/11 09:23:46	Moving to sample location A7
+2026/03/11 09:23:51	Arrived at sample location A7
+2026/03/11 09:23:52	Waiting to start sample location A7
+2026/03/11 09:23:52	Processing sample location A7
+2026/03/11 09:28:51	Sample completed location A7
+2026/03/11 09:28:52	Waiting to start new step
+2026/03/11 09:28:52	Starting new step
+2026/03/11 09:28:52	Ready to move to sample location A11
+2026/03/11 09:28:53	Moving to sample location A11
+2026/03/11 09:28:58	Arrived at sample location A11
+2026/03/11 09:28:58	Waiting to start sample location A11
+2026/03/11 09:28:58	Processing sample location A11
+2026/03/11 09:30:58	Sample completed location A11
+2026/03/11 09:30:58	Waiting to start new step
+2026/03/11 09:30:58	Starting new step
+2026/03/11 09:30:59	Ready to move to sample location A3
+2026/03/11 09:30:59	Moving to sample location A3
+2026/03/11 09:31:08	Arrived at sample location A3
+2026/03/11 09:31:08	Waiting to start sample location A3
+2026/03/11 09:31:08	Processing sample location A3
+2026/03/11 09:36:07	Sample completed location A3
+2026/03/11 09:36:08	Waiting to start new step
+2026/03/11 09:36:08	Starting new step
+2026/03/11 09:36:08	Ready to move to sample location A7
+2026/03/11 09:36:09	Moving to sample location A7
+2026/03/11 09:36:14	Arrived at sample location A7
+2026/03/11 09:36:14	Waiting to start sample location A7
+2026/03/11 09:36:14	Processing sample location A7
+2026/03/11 10:59:34	Sample completed location A7
+2026/03/11 10:59:34	Waiting for ejection start location A3
+2026/03/11 10:59:35	Ejecting sensor location A3
+2026/03/11 11:00:30	Ejecting completed location A3
+2026/03/11 11:00:30	Experiment finished
+2026/03/11 11:00:30	Ready
+2026/03/11 11:03:30	Door Interlock: Experiment cannot be started with the door open.
+2026/03/11 11:03:31	Operation failed
+2026/03/11 11:03:33	Terminated by user
+2026/03/11 11:03:33	Experiment aborting
+2026/03/11 11:03:34	Experiment aborted
+2026/03/11 11:03:47	Waiting to initialize
+2026/03/11 11:03:49	Initializing...
+2026/03/11 11:04:34	Instrument initialized
+2026/03/11 11:04:34	Ready

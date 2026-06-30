@@ -1,0 +1,1569 @@
+config:
+  name: BLI_default
+  hardware:
+    instrument: OctetRED384
+    sensor_block_size: 8
+  measurement:
+    type: titration
+    reference_type: concentration_matched
+  processing:
+    alpha_ligand: 1.0
+    beta_reference: -1.0
+  kinetic_model:
+    type: piecewise
+  output:
+    processing_settings_file: processing_settings.yaml
+sensor_map:
+  A3: Ligand Sensor
+  B3: Ligand Sensor
+  C3: Ligand Sensor
+  D3: Ligand Sensor
+  E3: Ligand Sensor
+  F3: Ligand Sensor
+  G3: Ligand Sensor
+  H3: Ligand Sensor
+  A4: Reference Sensor
+  B4: Reference Sensor
+  C4: Reference Sensor
+  D4: Reference Sensor
+  E4: Reference Sensor
+  F4: Reference Sensor
+  G4: Reference Sensor
+  H4: Reference Sensor
+sample_map:
+  '1':
+    A1:
+      well_type: Sample
+      concentration_nM: 3000.0
+      sample_id: Nb6 3000 nM
+      empty: false
+      row: '1'
+      column: '1'
+    B1:
+      well_type: Sample
+      concentration_nM: 1000.0000000000001
+      sample_id: Nb6 1000 nM
+      empty: false
+      row: '2'
+      column: '1'
+    C1:
+      well_type: Sample
+      concentration_nM: 333.3
+      sample_id: Nb6 333.333 nM
+      empty: false
+      row: '3'
+      column: '1'
+    D1:
+      well_type: Sample
+      concentration_nM: 111.1
+      sample_id: Nb6 111.111 nM
+      empty: false
+      row: '4'
+      column: '1'
+    E1:
+      well_type: Sample
+      concentration_nM: 37.04
+      sample_id: Nb6 37.037 nM
+      empty: false
+      row: '5'
+      column: '1'
+    F1:
+      well_type: Sample
+      concentration_nM: 12.35
+      sample_id: Nb6 12.346 nM
+      empty: false
+      row: '6'
+      column: '1'
+    G1:
+      well_type: Sample
+      concentration_nM: 4.115
+      sample_id: Nb6 4.115 nM
+      empty: false
+      row: '7'
+      column: '1'
+    H1:
+      well_type: Sample
+      concentration_nM: 1.371
+      sample_id: Nb6 1.371 nM
+      empty: false
+      row: '8'
+      column: '1'
+    A2:
+      well_type: Sample
+      concentration_nM: 3000.0
+      sample_id: Nb6 3000 nM
+      empty: false
+      row: '1'
+      column: '2'
+    B2:
+      well_type: Sample
+      concentration_nM: 1000.0000000000001
+      sample_id: Nb6 1000 nM
+      empty: false
+      row: '2'
+      column: '2'
+    C2:
+      well_type: Sample
+      concentration_nM: 333.3
+      sample_id: Nb6 333.333 nM
+      empty: false
+      row: '3'
+      column: '2'
+    D2:
+      well_type: Sample
+      concentration_nM: 111.1
+      sample_id: Nb6 111.111 nM
+      empty: false
+      row: '4'
+      column: '2'
+    E2:
+      well_type: Sample
+      concentration_nM: 37.04
+      sample_id: Nb6 37.037 nM
+      empty: false
+      row: '5'
+      column: '2'
+    F2:
+      well_type: Sample
+      concentration_nM: 12.35
+      sample_id: Nb6 12.346 nM
+      empty: false
+      row: '6'
+      column: '2'
+    G2:
+      well_type: Sample
+      concentration_nM: 4.115
+      sample_id: Nb6 4.115 nM
+      empty: false
+      row: '7'
+      column: '2'
+    H2:
+      well_type: Sample
+      concentration_nM: 1.371
+      sample_id: Nb6 1.371 nM
+      empty: false
+      row: '8'
+      column: '2'
+    A3:
+      well_type: Sample
+      concentration_nM: 3000.0
+      sample_id: Nb8 3000 nM
+      empty: false
+      row: '1'
+      column: '3'
+    B3:
+      well_type: Sample
+      concentration_nM: 1000.0000000000001
+      sample_id: Nb8 1000 nM
+      empty: false
+      row: '2'
+      column: '3'
+    C3:
+      well_type: Sample
+      concentration_nM: 333.3
+      sample_id: Nb8 333.333 nM
+      empty: false
+      row: '3'
+      column: '3'
+    D3:
+      well_type: Sample
+      concentration_nM: 111.1
+      sample_id: Nb8 111.111 nM
+      empty: false
+      row: '4'
+      column: '3'
+    E3:
+      well_type: Sample
+      concentration_nM: 37.04
+      sample_id: Nb8 37.037 nM
+      empty: false
+      row: '5'
+      column: '3'
+    F3:
+      well_type: Sample
+      concentration_nM: 12.35
+      sample_id: Nb8 12.346 nM
+      empty: false
+      row: '6'
+      column: '3'
+    G3:
+      well_type: Sample
+      concentration_nM: 4.115
+      sample_id: Nb8 4.115 nM
+      empty: false
+      row: '7'
+      column: '3'
+    H3:
+      well_type: Sample
+      concentration_nM: 1.371
+      sample_id: Nb8 1.371 nM
+      empty: false
+      row: '8'
+      column: '3'
+    A4:
+      well_type: Sample
+      concentration_nM: 3000.0
+      sample_id: Nb8 3000 nM
+      empty: false
+      row: '1'
+      column: '4'
+    B4:
+      well_type: Sample
+      concentration_nM: 1000.0000000000001
+      sample_id: Nb8 1000 nM
+      empty: false
+      row: '2'
+      column: '4'
+    C4:
+      well_type: Sample
+      concentration_nM: 333.3
+      sample_id: Nb8 333.333 nM
+      empty: false
+      row: '3'
+      column: '4'
+    D4:
+      well_type: Sample
+      concentration_nM: 111.1
+      sample_id: Nb8 111.111 nM
+      empty: false
+      row: '4'
+      column: '4'
+    E4:
+      well_type: Sample
+      concentration_nM: 37.04
+      sample_id: Nb8 37.037 nM
+      empty: false
+      row: '5'
+      column: '4'
+    F4:
+      well_type: Sample
+      concentration_nM: 12.35
+      sample_id: Nb8 12.346 nM
+      empty: false
+      row: '6'
+      column: '4'
+    G4:
+      well_type: Sample
+      concentration_nM: 4.115
+      sample_id: Nb8 4.115 nM
+      empty: false
+      row: '7'
+      column: '4'
+    H4:
+      well_type: Sample
+      concentration_nM: 1.371
+      sample_id: Nb8 1.371 nM
+      empty: false
+      row: '8'
+      column: '4'
+    A5:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '1'
+      column: '5'
+    B5:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '2'
+      column: '5'
+    C5:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '3'
+      column: '5'
+    D5:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '4'
+      column: '5'
+    E5:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '5'
+      column: '5'
+    F5:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '6'
+      column: '5'
+    G5:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '7'
+      column: '5'
+    H5:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '8'
+      column: '5'
+    A6:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '1'
+      column: '6'
+    B6:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '2'
+      column: '6'
+    C6:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '3'
+      column: '6'
+    D6:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '4'
+      column: '6'
+    E6:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '5'
+      column: '6'
+    F6:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '6'
+      column: '6'
+    G6:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '7'
+      column: '6'
+    H6:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '8'
+      column: '6'
+    A7:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '1'
+      column: '7'
+    B7:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '2'
+      column: '7'
+    C7:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '3'
+      column: '7'
+    D7:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '4'
+      column: '7'
+    E7:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '5'
+      column: '7'
+    F7:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '6'
+      column: '7'
+    G7:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '7'
+      column: '7'
+    H7:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '8'
+      column: '7'
+    A8:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '1'
+      column: '8'
+    B8:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '2'
+      column: '8'
+    C8:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '3'
+      column: '8'
+    D8:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '4'
+      column: '8'
+    E8:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '5'
+      column: '8'
+    F8:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '6'
+      column: '8'
+    G8:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '7'
+      column: '8'
+    H8:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '8'
+      column: '8'
+    A9:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '1'
+      column: '9'
+    B9:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '2'
+      column: '9'
+    C9:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '3'
+      column: '9'
+    D9:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '4'
+      column: '9'
+    E9:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '5'
+      column: '9'
+    F9:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '6'
+      column: '9'
+    G9:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '7'
+      column: '9'
+    H9:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '8'
+      column: '9'
+    A10:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '1'
+      column: '10'
+    B10:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '2'
+      column: '10'
+    C10:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '3'
+      column: '10'
+    D10:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '4'
+      column: '10'
+    E10:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '5'
+      column: '10'
+    F10:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '6'
+      column: '10'
+    G10:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '7'
+      column: '10'
+    H10:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '8'
+      column: '10'
+    A11:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '1'
+      column: '11'
+    B11:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '2'
+      column: '11'
+    C11:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '3'
+      column: '11'
+    D11:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '4'
+      column: '11'
+    E11:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '5'
+      column: '11'
+    F11:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '6'
+      column: '11'
+    G11:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '7'
+      column: '11'
+    H11:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '8'
+      column: '11'
+    A12:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '1'
+      column: '12'
+    B12:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '2'
+      column: '12'
+    C12:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '3'
+      column: '12'
+    D12:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '4'
+      column: '12'
+    E12:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '5'
+      column: '12'
+    F12:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '6'
+      column: '12'
+    G12:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '7'
+      column: '12'
+    H12:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: ''
+      empty: true
+      row: '8'
+      column: '12'
+  '2':
+    A1:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '1'
+      column: '1'
+    B1:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '2'
+      column: '1'
+    C1:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '3'
+      column: '1'
+    D1:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '4'
+      column: '1'
+    E1:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '5'
+      column: '1'
+    F1:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '6'
+      column: '1'
+    G1:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '7'
+      column: '1'
+    H1:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '8'
+      column: '1'
+    A2:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '1'
+      column: '2'
+    B2:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '2'
+      column: '2'
+    C2:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '3'
+      column: '2'
+    D2:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '4'
+      column: '2'
+    E2:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '5'
+      column: '2'
+    F2:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '6'
+      column: '2'
+    G2:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '7'
+      column: '2'
+    H2:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '8'
+      column: '2'
+    A3:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '1'
+      column: '3'
+    B3:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '2'
+      column: '3'
+    C3:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '3'
+      column: '3'
+    D3:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '4'
+      column: '3'
+    E3:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '5'
+      column: '3'
+    F3:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '6'
+      column: '3'
+    G3:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '7'
+      column: '3'
+    H3:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '8'
+      column: '3'
+    A4:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '1'
+      column: '4'
+    B4:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '2'
+      column: '4'
+    C4:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '3'
+      column: '4'
+    D4:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '4'
+      column: '4'
+    E4:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '5'
+      column: '4'
+    F4:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '6'
+      column: '4'
+    G4:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '7'
+      column: '4'
+    H4:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '8'
+      column: '4'
+    A5:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '1'
+      column: '5'
+    B5:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '2'
+      column: '5'
+    C5:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '3'
+      column: '5'
+    D5:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '4'
+      column: '5'
+    E5:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '5'
+      column: '5'
+    F5:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '6'
+      column: '5'
+    G5:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '7'
+      column: '5'
+    H5:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '8'
+      column: '5'
+    A6:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '1'
+      column: '6'
+    B6:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '2'
+      column: '6'
+    C6:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '3'
+      column: '6'
+    D6:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '4'
+      column: '6'
+    E6:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '5'
+      column: '6'
+    F6:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '6'
+      column: '6'
+    G6:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '7'
+      column: '6'
+    H6:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '8'
+      column: '6'
+    A7:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '1'
+      column: '7'
+    B7:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '2'
+      column: '7'
+    C7:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '3'
+      column: '7'
+    D7:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '4'
+      column: '7'
+    E7:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '5'
+      column: '7'
+    F7:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '6'
+      column: '7'
+    G7:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '7'
+      column: '7'
+    H7:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: BT PfLDH
+      empty: false
+      row: '8'
+      column: '7'
+    A8:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '1'
+      column: '8'
+    B8:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '2'
+      column: '8'
+    C8:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '3'
+      column: '8'
+    D8:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '4'
+      column: '8'
+    E8:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '5'
+      column: '8'
+    F8:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '6'
+      column: '8'
+    G8:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '7'
+      column: '8'
+    H8:
+      well_type: unset
+      concentration_nM: {}
+      sample_id: Buffer
+      empty: false
+      row: '8'
+      column: '8'
+    A9:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '1'
+      column: '9'
+    B9:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '2'
+      column: '9'
+    C9:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '3'
+      column: '9'
+    D9:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '4'
+      column: '9'
+    E9:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '5'
+      column: '9'
+    F9:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '6'
+      column: '9'
+    G9:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '7'
+      column: '9'
+    H9:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '8'
+      column: '9'
+    A10:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '1'
+      column: '10'
+    B10:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '2'
+      column: '10'
+    C10:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '3'
+      column: '10'
+    D10:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '4'
+      column: '10'
+    E10:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '5'
+      column: '10'
+    F10:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '6'
+      column: '10'
+    G10:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '7'
+      column: '10'
+    H10:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '8'
+      column: '10'
+    A11:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '1'
+      column: '11'
+    B11:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '2'
+      column: '11'
+    C11:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '3'
+      column: '11'
+    D11:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '4'
+      column: '11'
+    E11:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '5'
+      column: '11'
+    F11:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '6'
+      column: '11'
+    G11:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '7'
+      column: '11'
+    H11:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '8'
+      column: '11'
+    A12:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '1'
+      column: '12'
+    B12:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '2'
+      column: '12'
+    C12:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '3'
+      column: '12'
+    D12:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '4'
+      column: '12'
+    E12:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '5'
+      column: '12'
+    F12:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '6'
+      column: '12'
+    G12:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '7'
+      column: '12'
+    H12:
+      well_type: Buffer
+      concentration_nM: {}
+      sample_id: ''
+      empty: false
+      row: '8'
+      column: '12'
+concentration_map:
+  A3:
+    concentration_nM: 3000.0
+    molar_conc_units: nM
+    sample_id: Nb8 3000 nM
+    frd_file: 260311_001.frd
+  B3:
+    concentration_nM: 1000.0
+    molar_conc_units: nM
+    sample_id: Nb8 1000 nM
+    frd_file: 260311_002.frd
+  C3:
+    concentration_nM: 333.3
+    molar_conc_units: nM
+    sample_id: Nb8 333.333 nM
+    frd_file: 260311_003.frd
+  D3:
+    concentration_nM: 111.1
+    molar_conc_units: nM
+    sample_id: Nb8 111.111 nM
+    frd_file: 260311_004.frd
+  E3:
+    concentration_nM: 37.04
+    molar_conc_units: nM
+    sample_id: Nb8 37.037 nM
+    frd_file: 260311_005.frd
+  F3:
+    concentration_nM: 12.35
+    molar_conc_units: nM
+    sample_id: Nb8 12.346 nM
+    frd_file: 260311_006.frd
+  G3:
+    concentration_nM: 4.115
+    molar_conc_units: nM
+    sample_id: Nb8 4.115 nM
+    frd_file: 260311_007.frd
+  H3:
+    concentration_nM: 1.371
+    molar_conc_units: nM
+    sample_id: Nb8 1.371 nM
+    frd_file: 260311_008.frd
+ligand_reference_map:
+  A3: A4
+  B3: B4
+  C3: C4
+  D3: D4
+  E3: E4
+  F3: F4
+  G3: G4
+  H3: H4
+titration_from_sample_plate:
+- plate: 1
+  well: A1
+  concentration_nM: 3000.0
+  sample_id: Nb6 3000 nM
+- plate: 1
+  well: A2
+  concentration_nM: 3000.0
+  sample_id: Nb6 3000 nM
+- plate: 1
+  well: A3
+  concentration_nM: 3000.0
+  sample_id: Nb8 3000 nM
+- plate: 1
+  well: A4
+  concentration_nM: 3000.0
+  sample_id: Nb8 3000 nM
+- plate: 1
+  well: B1
+  concentration_nM: 1000.0000000000001
+  sample_id: Nb6 1000 nM
+- plate: 1
+  well: B2
+  concentration_nM: 1000.0000000000001
+  sample_id: Nb6 1000 nM
+- plate: 1
+  well: B3
+  concentration_nM: 1000.0000000000001
+  sample_id: Nb8 1000 nM
+- plate: 1
+  well: B4
+  concentration_nM: 1000.0000000000001
+  sample_id: Nb8 1000 nM
+- plate: 1
+  well: C1
+  concentration_nM: 333.3
+  sample_id: Nb6 333.333 nM
+- plate: 1
+  well: C2
+  concentration_nM: 333.3
+  sample_id: Nb6 333.333 nM
+- plate: 1
+  well: C3
+  concentration_nM: 333.3
+  sample_id: Nb8 333.333 nM
+- plate: 1
+  well: C4
+  concentration_nM: 333.3
+  sample_id: Nb8 333.333 nM
+- plate: 1
+  well: D1
+  concentration_nM: 111.1
+  sample_id: Nb6 111.111 nM
+- plate: 1
+  well: D2
+  concentration_nM: 111.1
+  sample_id: Nb6 111.111 nM
+- plate: 1
+  well: D3
+  concentration_nM: 111.1
+  sample_id: Nb8 111.111 nM
+- plate: 1
+  well: D4
+  concentration_nM: 111.1
+  sample_id: Nb8 111.111 nM
+- plate: 1
+  well: E1
+  concentration_nM: 37.04
+  sample_id: Nb6 37.037 nM
+- plate: 1
+  well: E2
+  concentration_nM: 37.04
+  sample_id: Nb6 37.037 nM
+- plate: 1
+  well: E3
+  concentration_nM: 37.04
+  sample_id: Nb8 37.037 nM
+- plate: 1
+  well: E4
+  concentration_nM: 37.04
+  sample_id: Nb8 37.037 nM
+- plate: 1
+  well: F1
+  concentration_nM: 12.35
+  sample_id: Nb6 12.346 nM
+- plate: 1
+  well: F2
+  concentration_nM: 12.35
+  sample_id: Nb6 12.346 nM
+- plate: 1
+  well: F3
+  concentration_nM: 12.35
+  sample_id: Nb8 12.346 nM
+- plate: 1
+  well: F4
+  concentration_nM: 12.35
+  sample_id: Nb8 12.346 nM
+- plate: 1
+  well: G1
+  concentration_nM: 4.115
+  sample_id: Nb6 4.115 nM
+- plate: 1
+  well: G2
+  concentration_nM: 4.115
+  sample_id: Nb6 4.115 nM
+- plate: 1
+  well: G3
+  concentration_nM: 4.115
+  sample_id: Nb8 4.115 nM
+- plate: 1
+  well: G4
+  concentration_nM: 4.115
+  sample_id: Nb8 4.115 nM
+- plate: 1
+  well: H1
+  concentration_nM: 1.371
+  sample_id: Nb6 1.371 nM
+- plate: 1
+  well: H2
+  concentration_nM: 1.371
+  sample_id: Nb6 1.371 nM
+- plate: 1
+  well: H3
+  concentration_nM: 1.371
+  sample_id: Nb8 1.371 nM
+- plate: 1
+  well: H4
+  concentration_nM: 1.371
+  sample_id: Nb8 1.371 nM
+extra:
+  n_traces: 8
+  labels:
+  - A3
+  - B3
+  - C3
+  - D3
+  - E3
+  - F3
+  - G3
+  - H3

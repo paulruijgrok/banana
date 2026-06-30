@@ -1,0 +1,27 @@
+# Default BLI experiment config (Octet-style sensor block + titration)
+
+name: BLI_default
+
+hardware:
+  instrument: OctetRED384
+  sensor_block_size: 8   # 8 or 16 sensors per block (ligand + reference columns)
+
+measurement:
+  type: titration
+  # reference_type: concentration_matched  → same row, ref column = ligand column + 1 (A1→A2)
+  # reference_type: none                  → no reference subtraction
+  reference_type: concentration_matched
+
+processing:
+  # response = alpha * ligand + beta * reference  (default subtract)
+  alpha_ligand: 1.0
+  beta_reference: -1.0
+  # Optional, after subtraction + baseline (needs ASSOC/DISASSOC in data):
+  # align_to_association_phase: false
+  # step_correction: false
+
+kinetic_model:
+  type: piecewise   # or 1_to_1_binding
+
+output:
+  processing_settings_file: processing_settings.yaml

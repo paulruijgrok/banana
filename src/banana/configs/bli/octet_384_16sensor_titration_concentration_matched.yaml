@@ -1,0 +1,30 @@
+# Example: 16-sensor block (8 ligand + 8 reference), titration, concentration-matched refs
+
+name: octet_384_16sensor_titration_concentration_matched_reference_wells
+
+hardware:
+  instrument: OctetRED384
+  sensor_block_size: 16
+
+measurement:
+  type: titration
+  reference_type: concentration_matched
+
+processing:
+  alpha_ligand: 1.0
+  beta_reference: -1.0
+  # After reference subtraction + baseline: optional phase adjustments (require ASSOC/DISASSOC steps)
+  align_to_association_phase: true 
+  step_correction: true
+
+kinetic_model:
+  type: piecewise
+
+output:
+  processing_settings_file: processing_settings.yaml
+  output_dir: output
+  titration_fits_plots:
+    plot: True
+    save_pdf: True
+    layout: detailed_single
+    annotate_fit_params: False

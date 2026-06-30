@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+*.egg
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Run outputs (instrument exports, generated results)
+output/
+*.tmp
+
+# PR scratch
+PR_DESCRIPTION.md
+
+# Office lock files
+~$*
+
+# PR patch
+*.patch
+
+# git setup helpers (scratch)
+setup_git.sh
