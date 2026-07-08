@@ -27,6 +27,13 @@ htmlcov/
 output/
 *.tmp
 
+# Large real datasets kept local, not committed (Nb6/Nb8 already tracked as fixtures)
+example_data/*Top8 Screen*/
+example_data/*Phage Display*/
+
+# autotune-vs-legacy harness comparison outputs
+autotune_compare_*.csv
+
 # PR scratch
 PR_DESCRIPTION.md
 
